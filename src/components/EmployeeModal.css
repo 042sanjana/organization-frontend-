@@ -1,0 +1,247 @@
+/* Overlay */
+
+.modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+/* Modal */
+
+.employee-modal{
+
+    width:900px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+    animation:popup .3s ease;
+
+}
+
+/* Animation */
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.employee-modal h2{
+
+    margin-bottom:25px;
+
+    color:#1565C0;
+
+    text-align:center;
+
+}
+
+/* Form Layout */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+.form-grid input,
+
+.form-grid select{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    outline:none;
+
+}
+
+.form-grid input:focus,
+
+.form-grid select:focus{
+
+    border-color:#1976D2;
+
+    box-shadow:0 0 8px rgba(25,118,210,.3);
+
+}
+
+/* Disabled Employee Number */
+
+.form-grid input:disabled{
+
+    background:#efefef;
+
+    color:#666;
+
+}
+
+/* Buttons */
+
+.button-row{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+}
+
+.save-btn{
+
+    background:#1976D2;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.save-btn:hover{
+
+    background:#1257a8;
+
+}
+
+.cancel-btn{
+
+    background:#e53935;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.cancel-btn:hover{
+
+    background:#c62828;
+
+}
+
+/* Scrollbar */
+
+.employee-modal::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.employee-modal::-webkit-scrollbar-thumb{
+
+    background:#1976D2;
+
+    border-radius:10px;
+
+}
+
+.employee-modal::-webkit-scrollbar-track{
+
+    background:#eee;
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.employee-modal{
+
+    width:95%;
+
+    padding:20px;
+
+}
+
+.form-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.button-row{
+
+    flex-direction:column;
+
+}
+
+.save-btn,
+
+.cancel-btn{
+
+    width:100%;
+
+}
+
+}

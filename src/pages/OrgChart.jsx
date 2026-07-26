@@ -101,10 +101,19 @@ function findEmployeePaths(
 
     const currentPath = [...path, emp];
 
+    const name = String(
+      emp.employee["EMPLOYEE NAME"] || ""
+    ).toLowerCase();
+
+    const empNumber = String(
+      emp.employee["EMPLOYEE NUMBER"] || ""
+    ).toLowerCase();
+
+    const search = searchText.toLowerCase();
+
     if (
-      emp.employee["EMPLOYEE NAME"]
-        ?.toLowerCase()
-        .includes(searchText.toLowerCase())
+      name.includes(search) ||
+      empNumber.includes(search)
     ) {
       results.push(currentPath);
     }
@@ -304,7 +313,7 @@ function OrgChart() {
 
     if (!searchText.trim()) {
 
-      alert("Enter employee name");
+      alert("Enter employee name or employee number");
 
       return;
 
